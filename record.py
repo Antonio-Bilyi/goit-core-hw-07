@@ -33,9 +33,9 @@ class Record:
             raise ValueError('Phone not found!')
         
         else:
-            new_element = Phone(new_number)
+            
             self.remove_phone(old_number)
-            self.add_phone(new_element)
+            self.add_phone(new_number)
     
     def add_birthday(self, birthday):
         self.birthday = Birthday(birthday)       

@@ -22,7 +22,7 @@ def show_birthday(args, book: AddressBook):
     record = book.find(name)
 
     if record and record.birthday:
-        return f"{name}'s birthday is {record.birthday.strftime('%d.%m.%Y')}"
+        return f"{name}'s birthday is {record.birthday.value.strftime('%d.%m.%Y')}"
     elif record:
         return f"'Contact {name} doesn't have a birthday set"
     else:

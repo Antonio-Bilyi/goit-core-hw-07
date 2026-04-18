@@ -39,7 +39,7 @@ def show_contact(args, book: AddressBook):
         return f'Contact {name} not found'
     
     phones = "; ".join(p.value for p in record.phones)
-    return f'Contact {name} has phone number {phones}\n'
+    return f'Contact {name} has phone number {phones}'
 
 @input_error
 def all_contacts(book: AddressBook):

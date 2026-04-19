@@ -23,9 +23,6 @@ def change_contact(args, book: AddressBook):
     name, old_phone, new_phone, *_ = args
     record = book.find(name)
 
-    if not record:
-        return f'Contact {name} not found'
-    
     record.edit_phone(old_phone, new_phone)
 
     return f'Phone for contact {name} has changed'
@@ -35,9 +32,6 @@ def show_contact(args, book: AddressBook):
     name, *_ = args
     record = book.find(name)
 
-    if not record:
-        return f'Contact {name} not found'
-    
     phones = "; ".join(p.value for p in record.phones)
     return f'Contact {name} has phone number {phones}'
 

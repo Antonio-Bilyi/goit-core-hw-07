@@ -10,9 +10,6 @@ def add_birthday(args, book: AddressBook):
     name, birthday, *_ = args
     record = book.find(name)
 
-    if not record:
-        return f'Contact {name} not found'
-    
     record.add_birthday(birthday)
     return f'Birthday added for {name}'
 
@@ -35,7 +32,8 @@ def birthdays(args, book: AddressBook):
     if not upcoming_birthdays:
         return 'No upcoming birthdays'
     
+    result = []
     for el in upcoming_birthdays:
-        result = f'{el['name']: {el['congratulation_date']}}\n'
+        result.append(f'{el['name']: {el['congratulation_date']}}\n') 
     
-    return result.strip()
+    return "\n".join(result)

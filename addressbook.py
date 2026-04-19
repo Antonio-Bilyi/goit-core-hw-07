@@ -23,7 +23,7 @@ class AddressBook(UserDict):
             if not record.birthday:
                 continue
         
-            birthday_date = record.birthday.value
+            birthday_date = datetime.strptime(record.birthday.value, '%d.%m.%Y').date()
             birthday_this_year = birthday_date.replace(year=today.year)
 
             if birthday_this_year < today:

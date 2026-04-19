@@ -27,18 +27,26 @@ class Record:
             raise ValueError('Phone not found!')
     
     def edit_phone(self, old_number, new_number):
-        element = self.find_phone(old_number)
+        old_element = self.find_phone(old_number)
 
-        if not element:
+        if not old_element:
             raise ValueError('Phone not found!')
         
         else:
+            new_element = Phone(new_number)
+
+            index = self.phones.index(old_element)
+            self.phones[index] = new_element
             
-            self.remove_phone(old_number)
-            self.add_phone(new_number)
+            
     
     def add_birthday(self, birthday):
         self.birthday = Birthday(birthday)       
         
     def __str__(self):
-        return f'Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}'
+        message = f'Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}'
+
+        if self.birthday:
+            message += f', birthday: {self.birthday.value}'
+        
+        return message

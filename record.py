@@ -36,9 +36,7 @@ class Record:
             new_element = Phone(new_number)
 
             index = self.phones.index(old_element)
-            self.phones[index] = new_element
-            
-            
+            self.phones[index] = new_element   
     
     def add_birthday(self, birthday):
         self.birthday = Birthday(birthday)       

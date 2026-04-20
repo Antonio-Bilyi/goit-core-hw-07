@@ -39,7 +39,7 @@ def main():
             print(show_birthday(args, book))
 
         elif command == 'birthdays':
-            print(birthdays(args, book))
+            print(birthdays(book))
 
         else:
             print('Invalid command')

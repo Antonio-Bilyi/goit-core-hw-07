@@ -11,7 +11,7 @@ def input_error(func):
             return 'Give me name and phone please!'
         
         except KeyError:
-            return 'Contact not found!'
+            return 'OOOOps!'
         
         except IndexError:
             return 'Enter the argument for the command'

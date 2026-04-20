@@ -18,15 +18,14 @@ def show_birthday(args, book: AddressBook):
     name, *_ = args
     record = book.find(name)
 
-    if record and record.birthday:
-        return f"{name}'s birthday is {record.birthday.value.strftime('%d.%m.%Y')}"
-    elif record:
-        return f"'Contact {name} doesn't have a birthday set"
-    else:
-        return f'Contact {name} not found'
+    if record:
+        if record.birthday:
+            return f"{name}'s birthday is {record.birthday.value}"
+        else:
+          return f"'Contact {name} doesn't have a birthday set"    
 
 @input_error
-def birthdays(args, book: AddressBook):
+def birthdays(book: AddressBook):
     upcoming_birthdays = book.get_upcoming_birthday()
 
     if not upcoming_birthdays:

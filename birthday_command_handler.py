@@ -33,6 +33,6 @@ def birthdays(book: AddressBook):
     
     result = []
     for el in upcoming_birthdays:
-        result.append(f'{el['name']: {el['congratulation_date']}}\n') 
+        result.append(f"{el['name']}: {el['congratulation_date']}") 
     
     return "\n".join(result)
